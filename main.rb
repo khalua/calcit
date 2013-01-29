@@ -25,7 +25,13 @@ while true
   puts "          calculates mortgage payments"
   puts "Press 4 + Enter for BMI Calculator".foreground(:magenta)
   puts "          calculates body mass index"
-  puts "Press 5 + Enter to quit".foreground(:magenta)
+  puts "Press 5 + Enter for Tony Trip Calculator".foreground(:magenta)
+  puts "          trip cost and length"
+  puts "Press 6 + Enter for Brian Trip Calculator".foreground(:magenta)
+  puts "          trip cost and length"
+  puts "Press 7 + Enter for Alex Trip Calculator".foreground(:magenta)
+  puts "          trip cost and length"
+  puts "Press 8 + Enter to quit".foreground(:magenta)
   puts "          "
 
   main_choice = gets.chomp
@@ -133,10 +139,20 @@ while true
 
     elsif main_choice == "4"
       bmi_io
+      puts "hit enter to proceed"
       gets
       #BMI
 
     elsif main_choice == "5"
+    #tony trip
+
+    elsif main_choice == "6"
+    #brian trip
+
+    elsif main_choice == "7"
+    #alex trip
+
+    elsif main_choice == "8"
       puts "bye"
       break
 
