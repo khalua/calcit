@@ -2,31 +2,36 @@ require 'rainbow'
 
 while true
   system('clear')
-  puts "Welcome to CalcIt, the greatest calculator in the world!"
+  puts "Welcome to CalcIt, the greatest calculator in the world!".foreground(:red).underline.bright.blink
   15.times { print "*+/-" }
   puts " "
-  puts "Press 1 + Enter for Basic Calculator"
+  puts "Press 1 + Enter for Basic Calculator".foreground(:magenta)
   puts "          addition, subtraction, multiplication, division"
-  puts "Press 2 + Enter for Advanced Calculator"
+  puts "Press 2 + Enter for Advanced Calculator".foreground(:magenta)
   puts "          calculates power and square root"
-  puts "Press 3 + Enter to quit"
+  puts "Press 3 + Enter for Mortgage Calculator".foreground(:magenta)
+  puts "          calculates mortgage payments"
+  puts "Press 4 + Enter for BMI Calculator".foreground(:magenta)
+  puts "          calculates body mass index"
+  puts "Press 5 + Enter to quit".foreground(:magenta)
   puts "          "
 
   main_choice = gets.chomp
+  system('clear')
 
   #while true
     if main_choice == "1"
       in_basic_menu = true
       while in_basic_menu
         #do basic calculator
-        puts "Basic calc"
-        puts 'Welcome to the basic calculator!'
-
-        puts 'Enter "a" for addition.'
-        puts 'Enter "s" for subtraction.'
-        puts 'Enter "m" for multiplication.'
-        puts 'Enter "d" for division.'
-        puts 'Enter "x" for main menu.'
+        puts 'Welcome to the Basic Calculator!'.foreground(:red).bright.underline
+        puts 'Please select an option:'
+        puts ''
+        puts 'Enter "a" for addition.'.foreground(:magenta)
+        puts 'Enter "s" for subtraction.'.foreground(:magenta)
+        puts 'Enter "m" for multiplication.'.foreground(:magenta)
+        puts 'Enter "d" for division.'.foreground(:magenta)
+        puts 'Enter "x" for main menu.'.foreground(:magenta)
         basicfunction = gets.chomp
         if basicfunction == 'x'
           puts "Returning to Main Menu..."
@@ -71,17 +76,17 @@ while true
 
     elsif main_choice == "2"
       #do advanced calculator
-      puts "Advanced calc"
+      system('clear')
       ### Advanced Calculator Submenu
 
       go_to_main = false
 
       while !go_to_main
-        puts "Welcome to Advanced Calculator"
+        puts "Welcome to Advanced Calculator".foreground(:red).bright.underline
         puts "Please type an option:"
-        puts "p - Power"
-        puts "sq - square root"
-        puts "x - Return to Main Menu"
+        puts "p - Power".foreground(:magenta)
+        puts "sq - square root".foreground(:magenta)
+        puts "x - Return to Main Menu".foreground(:magenta)
 
         #choices
         opt = gets.chomp.downcase
@@ -109,7 +114,14 @@ while true
             puts "Error: Please try again."
           end
       end
+
     elsif main_choice == "3"
+      #mortgage
+
+    elsif main_choice == "4"
+      #BMI
+
+    elsif main_choice == "5"
       puts "bye"
       break
 
