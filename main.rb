@@ -28,20 +28,23 @@ main_choice = gets.chomp
       puts "x - Return to Main Menu"
 
       #choices
-      opt = gets.chomp.lowercase
+      opt = gets.chomp.downcase
       case opt
         when 'p'
-            puts "Enter a number: "
+            print "Enter a number: "
             num = gets.chomp.to_i
-            puts "Enter an exponent: "
+            print "Enter an exponent: "
             exp = gets.chomp.to_i
             ans = num**exp
             puts "Your answer is #{ans}"
+            puts ""
         when 'sq'
-          puts "Enter your number: "
+          print "Enter your number: "
           num = gets.chomp.to_i
-          ans = num**num
+          ans = num*num
           puts "Your answer is #{ans}"
+          puts ""
+
         when 'x'
           #return to main_menu
           puts "Returning to Main Menu..."
