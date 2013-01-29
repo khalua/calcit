@@ -132,16 +132,12 @@ while true
       #mortgage
 
     elsif main_choice == "4"
+      bmi_io
+      gets
       #BMI
 
     elsif main_choice == "5"
       puts "bye"
-      break
-
-
-    elsif main_choice == "4"
-      #placeholder for BMI
-      bmi_io
       break
 
 
