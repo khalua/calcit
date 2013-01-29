@@ -1,6 +1,5 @@
-system('clear')
-running = true
-while running
+while true
+  system('clear')
   puts "Welcome to CalcIt, the greatest calculator in the world!"
   15.times { print "*+/-" }
   puts " "
@@ -8,6 +7,9 @@ while running
   puts "          addition, subtraction, multiplication, division"
   puts "Press 2 + Enter for Advanced Calculator"
   puts "          calculates power and square root"
+  puts "Press 3 + Enter to quit"
+  puts "          "
+
   main_choice = gets.chomp
 
   #while true
@@ -105,6 +107,11 @@ while running
             puts "Error: Please try again."
           end
       end
+    elsif main_choice == "3"
+      puts "bye"
+      break
+
+
     else
       puts "I don't understand"
     end
