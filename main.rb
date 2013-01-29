@@ -1,5 +1,17 @@
 require 'rainbow'
 
+def bmi_calc(weight,height)
+  703 * weight / (height * height)
+end
+
+def bmi_io
+  print "Weight in pounds: "
+  a = gets.chomp.to_f
+  print "Height in inches: "
+  b = gets.chomp.to_f
+  puts "Your BMI is #{bmi_calc(a,b)}"
+end
+
 while true
   system('clear')
   puts "Welcome to CalcIt, the greatest calculator in the world!"
@@ -13,6 +25,7 @@ while true
   puts "          "
 
   main_choice = gets.chomp
+
 
   #while true
     if main_choice == "1"
@@ -112,6 +125,13 @@ while true
     elsif main_choice == "3"
       puts "bye"
       break
+
+
+    elsif main_choice == "4"
+      #placeholder for BMI
+      bmi_io
+      break
+
 
 
     else
