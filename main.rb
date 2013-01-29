@@ -1,3 +1,5 @@
+require 'rainbow'
+
 while true
   system('clear')
   puts "Welcome to CalcIt, the greatest calculator in the world!"
@@ -116,5 +118,3 @@ while true
       puts "I don't understand"
     end
   end
-
-
