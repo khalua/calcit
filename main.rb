@@ -4,7 +4,7 @@
 
 ### Advanced Calculator Submenu
 def view_adv_calc_menu
-    go_to_main = true
+    go_to_main = false
 
     while !go_to_main
       puts "Welcome to Advanced Calculator"
@@ -31,7 +31,7 @@ def view_adv_calc_menu
         when 'x'
           #return to main_menu
           puts "Returning to Main Menu..."
-          go_to_main = false
+          go_to_main = true
         else
           puts "Error: Please try again."
         end
