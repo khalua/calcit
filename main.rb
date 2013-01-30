@@ -171,6 +171,9 @@ while true
       end
 
     elsif main_choice == "3"
+      puts "Mortgage Calculator".foreground(:red).bright.underline
+      puts ''
+
       #mortgage
       def mort_io
           print "Enter Mortgage Principal: "
@@ -200,17 +203,26 @@ while true
       gets
 
     elsif main_choice == "4"
+    puts "BMI Calculator".foreground(:red).bright.underline
+    puts ''
+
       bmi_io
       puts "hit enter to proceed"
       gets
 
 
     elsif main_choice == "5"
+    puts "Trip Calculator".foreground(:red).bright.underline
+    puts ''
+
     trip_io
     puts "hit enter to proceed"
     gets
 
     elsif main_choice == "6"
+    puts "Trip Calculator".foreground(:red).bright.underline
+    puts ''
+
     #brian trip
       def trip_calc
         # Get user input
@@ -266,7 +278,41 @@ while true
 
 
     elsif main_choice == "7"
-    #alex trip
+
+    puts "Trip Calculator".foreground(:red).bright.underline
+    puts ''
+
+    def triptime(distance, speed)
+      distance / speed
+    end
+
+    def tripslow (speed, mpg)
+      reduced_mpg = speed - 60
+      speed - (reduced_mpg * 2)
+    end
+
+    def tripcost(distance, mpg, cpg, speed)
+      if speed <= 60
+        (distance / mpg) * cpg
+      else
+        (distance / tripslow(speed,cpg)) * cpg
+      end
+    end
+
+    def tripcalc
+      print "How far is your trip, in miles? (Miles) "
+      distance = gets.chomp.to_f
+      print "How fast will you drive? (MPH) "
+      speed = gets.chomp.to_f
+      print "How many miles per gallon does your car get? (MPG) "
+      mpg = gets.chomp.to_f
+      print "How much does gas cost? (CPG) "
+      cpg = gets.chomp.to_f
+      puts "Your trip will take #{triptime(distance, speed)} hours and cost \$#{tripcost(distance, mpg, cpg, speed)} dollars. "
+    end
+
+    tripcalc
+    gets
 
     elsif main_choice == "8"
       puts "bye"
