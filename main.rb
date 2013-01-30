@@ -21,7 +21,7 @@ end
 
 def trip_mpg_reducer(mph, mpg)
   reduced_mpg = mph - 60
-  puts "the reduced mpg is #{mpg - (reduced_mpg * 2)}"
+  #puts "the reduced mpg is #{mpg - (reduced_mpg * 2)}"
   mpg - (reduced_mpg * 2)
 end
 
@@ -35,11 +35,11 @@ end
 
 
 def trip_io
-  print "How far will you drive? "
+  print "How far will you drive (miles)? "
   distance = gets.chomp.to_f
   print "What is the fuel efficiency of your vehicle (MPG)? "
   mpg = gets.chomp.to_f
-  print "How much does gas cost per gallon? "
+  print "How much does gas cost per gallon? (dollars) "
   price_per_gallon = gets.chomp.to_f
   print "How fast will you drive (average MPH)? "
   mph = gets.chomp.to_f
