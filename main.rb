@@ -1,16 +1,52 @@
 require 'rainbow'
 
+
+#functions for BMI
 def bmi_calc(weight,height)
   703 * weight / (height * height)
 end
 
 def bmi_io
   print "Weight in pounds: "
-  a = gets.chomp.to_f
+  weight = gets.chomp.to_f
   print "Height in inches: "
-  b = gets.chomp.to_f
-  puts "Your BMI is #{bmi_calc(a,b)}"
+  height = gets.chomp.to_f
+  puts "Your BMI is #{bmi_calc(weight, height)}"
 end
+
+#functions for trip calculator
+def trip_drive_time(distance, mph)
+  (distance / mph).round(2)
+end
+
+def trip_mpg_reducer(mph, mpg)
+  reduced_mpg = mph - 60
+  puts "the reduced mpg is #{mpg - (reduced_mpg * 2)}"
+  mpg - (reduced_mpg * 2)
+end
+
+def trip_drive_cost(distance, mpg, price_per_gallon, mph)
+  if mph <= 60
+    (price_per_gallon * (distance / mpg)).round(2)
+  else
+    (price_per_gallon * (distance / trip_mpg_reducer(mph, mpg))).round(2)
+  end
+end
+
+
+def trip_io
+  print "How far will you drive? "
+  distance = gets.chomp.to_f
+  print "What is the fuel efficiency of your vehicle (MPG)? "
+  mpg = gets.chomp.to_f
+  print "How much does gas cost per gallon? "
+  price_per_gallon = gets.chomp.to_f
+  print "How fast will you drive (average MPH)? "
+  mph = gets.chomp.to_f
+  puts "Your trip will take #{trip_drive_time(distance, mph)} hours and will cost $#{trip_drive_cost(distance, mpg, price_per_gallon, mph)}"
+  end
+
+
 
 while true
   system('clear')
@@ -141,10 +177,12 @@ while true
       bmi_io
       puts "hit enter to proceed"
       gets
-      #BMI
+
 
     elsif main_choice == "5"
-    #tony trip
+    trip_io
+    puts "hit enter to proceed"
+    gets
 
     elsif main_choice == "6"
     #brian trip
@@ -155,9 +193,6 @@ while true
     elsif main_choice == "8"
       puts "bye"
       break
-
-
-
     else
       puts "I don't understand"
     end
