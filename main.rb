@@ -172,6 +172,32 @@ while true
 
     elsif main_choice == "3"
       #mortgage
+      def mort_io
+          print "Enter Mortgage Principal: "
+          principal = gets.chomp.to_f
+          print "Enter Annual Interest Rate: "
+          interest = gets.chomp.to_f
+          print "Enter Number of Payments (Monthly): "
+          numPayments = gets.chomp.to_f
+         puts "Your monthly payment is #{mort_calc(numPayments,principal,interest)}"
+      end
+
+      ###
+      # Calcuates the mortgage
+      # p - principal
+      # i - annual interest rate
+      # n - number of payments
+      def mort_calc(n, p, i)
+        #conversions
+        i = i / 100
+        i = i / 12
+        #puts "#{p} *  (#{i}*(1+#{i})**#{n}) / ((1+#{i})**#{n} - 1)"
+        (p * ((i*(1+i)**n) / ((1+i)**n - 1))).round(2)
+      end
+
+      mort_io
+      puts "hit enter to proceed"
+      gets
 
     elsif main_choice == "4"
       bmi_io
@@ -186,6 +212,58 @@ while true
 
     elsif main_choice == "6"
     #brian trip
+      def trip_calc
+        # Get user input
+        print "How far are you traveling (in miles)? "
+        dist = gets.chomp.to_f
+
+        print "What is your miles per gallon? (MPG)? "
+        mpg = gets.chomp.to_f
+
+        print "How much does gas cost per gallon? "
+        cpg = gets.chomp.to_f
+
+        print "How fast will you drive (in miles)? "
+        speed = gets.chomp.to_f
+
+        # adjust mpg based on speed
+        mpg = adjusted_mpg(speed, mpg, 60)
+
+        #calculate!
+        time = time_of_trip(dist, speed)
+        cost = cost_of_trip(dist, cpg, mpg)
+
+        puts "Trip will cost you $#{cost} and take #{time} hours."
+      end
+
+
+      # adjusts MPG based on the speed of the car params: (speed, mpg) -- float, (limiter) - int
+      def adjusted_mpg(speed, mpg, limiter)
+        counter = speed
+        while counter > limiter
+          mpg -= 2
+          counter = counter - 1
+        end
+        mpg
+      end
+
+      # returns the length of trip in hours (params: d -- distance (in miles), s -- speed (in mph)
+      def time_of_trip(d, s)
+        d / s
+      end
+
+      # returns the cost of trip in $USD (params: d -- distance, cpg -- cost per gallon, mpg -- miles per gallon)
+      def cost_of_trip(d, cpg, mpg)
+        g = d / mpg
+        g * cpg
+      end
+
+
+      # call the program's main function - trip-calc
+      trip_calc
+      puts "hit enter to proceed"
+      gets
+
 
     elsif main_choice == "7"
     #alex trip
